@@ -1,0 +1,40 @@
+body{
+
+    background-color: rgb(212, 219, 216);
+}
+h3{
+
+    text-align: center;
+    padding-top: 80px;
+}
+.search-bar{
+
+    width:100%;
+    max-width: 700px;
+    background-color:rgb(247, 245, 244);
+    display:flex;
+    align-items: center;
+    border-radius:10px;
+    padding: 10px;
+    margin-top: 80px;
+}
+.search-bar input{
+    
+    background: transparent;
+    font-size: 17px;
+    border-style: none;
+    outline: none;
+    /* padding: 5px; */
+    flex: 1;
+
+}
+.search-bar button img{
+    outline:none;
+    border-style: none;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    background:#f3f4f7;
+    cursor: pointer;
+    
+}
