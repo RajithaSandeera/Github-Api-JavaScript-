@@ -32,7 +32,7 @@ try{
 }
  
     function showData(data){
-		document.getElementById("image").innerHTML = `<img src="${data.avatar_url}" style="width:250px; height:250px;border-radius:150px;">
+		document.getElementById("image").innerHTML = `<img src="${data.avatar_url}" style="width:250px; height:250px;border-radius:150px; padding:36px">
 		<P style="margin-top:25px"><strong>Hello  👋 I'M ${data.login}</P>
 		<p>${data.bio}</P>
 		<p><strong><i class="bi bi-people-fill me-2"></i>${data.followers}</P>
@@ -52,6 +52,8 @@ try{
 		<p>${data.created_at}</P>
 		
 		`
+		let bio = document.getElementById("bio");
+		bio.style.padding="50px 60px"
 	
 	}
     
