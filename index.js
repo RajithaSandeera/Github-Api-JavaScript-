@@ -1,100 +1,63 @@
-// let showDetails = ""
-// document.getElementById("btn").addEventListener('click',showDetails)
-// document.getElementById("gitName").addEventListener("keypress", getData);
 
+document.getElementById("btn").addEventListener('click',myFunction)
+
+
+getData =()=>{}
 
 async function myFunction() {
 
-    console.log("hivv")
     
 let username = document.getElementById('gitName').value
 
-    let api_url = 'https://api.github.com/users/'+username
+try{
+	 let api_url = `https://api.github.com/users/${username}`
+	//const api_url = `https://api.github.com/search/users?q=${username}`
+	
+	
     const response = await fetch(api_url)
-    const data = await response.json()
-    console.log(data)
-    // alert('working')
-    console.log('hi')
+	if (!response.ok) {
+		throw new Error(`HTTP error! status: ${response.status}`);
+	  }
 
-    document.getElementById("para").innerHTML = data.login
-    // document.getElementById("image").innerHTML =`img src="${data.avatar_url}" `
-    document.getElementById("id").innerHTML = `img src="${data.avatar_url}" `
+    const data = await response.json()
+	
+    console.log(data)
+    showData(data)
+
+
+}catch(e){
+	console.error(e)
+	displayError(error.message)
+
+}
+ 
+    function showData(data){
+		document.getElementById("image").innerHTML = `<img src="${data.avatar_url}" style="width:250px; height:250px;border-radius:150px;">
+		<P style="margin-top:25px"><strong>Hello  👋 I'M ${data.login}</P>
+		<p>${data.bio}</P>
+		<p><strong><i class="bi bi-people-fill me-2"></i>${data.followers}</P>
+		<p><strong><i class="bi bi-person-fill-up"></i>${data.following}</P>
+		`
+		
+		document.getElementById("bio").innerHTML =`	<p>${data.name}</P>
+		
+		<p><i class="bi bi-geo-alt me-2"></i>I'M lived in${data.location}</P>
+		<p><i class="bi bi-buildings"></i>${data.company}</P>
+		<p><i class="bi bi-flag-fill"></i>Number of repos: ${data.public_repos}</P>
+		
+		<p>You can Visit my Blog <a href="${data.blog}">link text</a></P>
+		<p>${data.html_url}</P>
+		<p>Date created${data.created_at}</P>
+		
+		<p>${data.created_at}</P>
+		
+		`
+	
+	}
+    
+  
+
+	
   }
 
    
- function showDetails(){
-
-    console.log("HI")
-
- 
-
-
-//  fetch(api_url).then(res=>res.json()).then(data=>{
-//         // console.log(data)
-//             alert('working')
-
-//     }).catch(e =>{
-//         console.log(e)
-//         // console.log(data)
-//         alert('not working prev')
-//     })
-// document.getElementById("gitName").onkeydown = function(){ getData()}
- 
-let username = document.getElementById('gitName').value
-let api_url = 'https://api.github.com/users/'+username
-
-getapi(api_url);
-
-// Defining async function
-async function getapi(url) {
-
-    console.log(url);
-  
-   	// Storing response
-	const response = await fetch(url);
-
-  
-	// Storing data in form of JSON
-	var data = await response.json();
-
-	console.log(data);
-
-	if (response) {
-		hideloader();
-        alert("not working")
-	}
-        show(data);
-        alert("working")
-}
-
-// Calling that async function
-
-// Function to hide the loader
-function hideloader() {
-    alert('no data')
-	document.getElementById('users').style.display = 'none';
-}
-// Function to define innerHTML for HTML table
-function show(data) {
-	let tab =
-		`<tr>
-		<th>Name</th>
-		<th>Bio</th>
-		<th>Repositories</th>
-		<th>Email</th>
-		</tr>`;
-	
-	// Loop to access all rows
-	for (let r of data.list) {
-		tab += `<tr>
-	<td>${r.name} </td>
-	<td>${r.bio}</td>
-	<td>${r.repos_url}</td>
-	<td>${r.email}</td>		
-</tr>`;
-	}
-	// Setting innerHTML as tab variable
-	document.getElementById("users").innerHTML = tab;
-}
- 
- }
