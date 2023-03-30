@@ -39,18 +39,16 @@ try{
 		<p><strong><i class="bi bi-person-fill-up"></i>${data.following}</P>
 		`
 		
-		document.getElementById("bio").innerHTML =`	<p>${data.name}</P>
+		document.getElementById("bio").innerHTML =`	
+		<p>${data.name}</P>
 		
-		<p><i class="bi bi-geo-alt me-2"></i>I'M lived in${data.location}</P>
+		<p><i class="bi bi-geo-alt me-2"></i>I'M lived in ${data.location}</P>
 		<p><i class="bi bi-buildings"></i>${data.company}</P>
 		<p><i class="bi bi-flag-fill"></i>Number of repos: ${data.public_repos}</P>
-		
-		<p>You can Visit my Blog <a href="${data.blog}">link text</a></P>
 		<p>${data.html_url}</P>
 		<p>Date created${data.created_at}</P>
-		
-		<p>${data.created_at}</P>
-		
+		<p>${data.html_url}</P>
+		<p>You can Visit my Blog <a href="${data.html_url}">link text</a></P>
 		`
 		let bio = document.getElementById("bio");
 		bio.style.padding="50px 60px"
