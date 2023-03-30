@@ -1,19 +1,21 @@
 
-document.getElementById("btn").addEventListener('click',myFunction)
+document.getElementById("searchBtn").addEventListener('click',myFunction)
 
 
 async function myFunction() {
 
 	
+
+try{
+
 	let detailLeft = document.getElementById("details-left");
 	detailLeft.classList.add("bg-mycolor");
 
 	let detailRight = document.getElementById("details-right");
 	detailRight.classList.add("bg-mycolor");
     
-let username = document.getElementById('gitName').value
+	let username = document.getElementById('gitName').value
 
-try{
 	 let api_url = `https://api.github.com/users/${username}`
 	//const api_url = `https://api.github.com/search/users?q=${username}`
 	
