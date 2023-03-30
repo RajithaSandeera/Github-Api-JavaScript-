@@ -2,10 +2,14 @@
 document.getElementById("btn").addEventListener('click',myFunction)
 
 
-getData =()=>{}
-
 async function myFunction() {
 
+	
+	let detailLeft = document.getElementById("details-left");
+	detailLeft.classList.add("bg-mycolor");
+
+	let detailRight = document.getElementById("details-right");
+	detailRight.classList.add("bg-mycolor");
     
 let username = document.getElementById('gitName').value
 
@@ -27,28 +31,51 @@ try{
 
 }catch(e){
 	console.error(e)
-	displayError(error.message)
+	alert(error.message)
 
 }
  
     function showData(data){
-		document.getElementById("image").innerHTML = `<img src="${data.avatar_url}" style="width:250px; height:250px;border-radius:150px; padding:36px">
+
+
+		document.getElementById("image").innerHTML = `
+		<div class="mx-auto px-auto text-center" style="max-width: 250px;">
+		<img src="${data.avatar_url}" class="rounded-circle border border-3 img-fluid "  >
+        </div>
 		<P style="margin-top:25px"><strong>Hello  👋 I'M ${data.login}</P>
 		<p>${data.bio}</P>
-		<p><strong><i class="bi bi-people-fill me-2"></i>${data.followers}</P>
-		<p><strong><i class="bi bi-person-fill-up"></i>${data.following}</P>
+		
+			<div class="col d-flex justify-content-center bd-highlight mb-3">
+			<p class="me-3"><strong><i class="bi bi-people-fill me-1"></i>${data.followers}</P>
+			<p><strong><i class="bi bi-person-fill-up me-1"></i> ${data.following}</P>
+			</div>
+	
+		
+
 		`
 		
-		document.getElementById("bio").innerHTML =`	
-		<p>${data.name}</P>
-		
-		<p><i class="bi bi-geo-alt me-2"></i>I'M lived in ${data.location}</P>
-		<p><i class="bi bi-buildings"></i>${data.company}</P>
-		<p><i class="bi bi-flag-fill"></i>Number of repos: ${data.public_repos}</P>
-		<p>${data.html_url}</P>
-		<p>Date created${data.created_at}</P>
-		<p>${data.html_url}</P>
-		<p>You can Visit my Blog <a href="${data.html_url}">link text</a></P>
+		document.getElementById("bio").innerHTML = `	
+		<ul class="list-group mt-5">
+			
+			<li class="" >
+				<p>${data.name}</P>
+			</li>
+			<li class="" >
+				<p><i class="bi bi-geo-alt me-2"></i>  I'M lived in ${data.location}</P>
+			</li>
+			<li class="" >
+				<p><i class="bi bi-buildings"></i>  ${data.company}</P>
+			</li>
+			<li class="" >
+				<p><i class="bi bi-flag-fill"></i>  Number of repos: ${data.public_repos}</P>
+			</li>
+			<li class="" >
+				<p>You can Visit my Blog <a href="${data.html_url}">link text</a></P>	
+			</li>
+			<li class="" >
+				<p>Date created ${data.created_at}</P>	
+			</li>
+		</ul>
 		`
 		let bio = document.getElementById("bio");
 		bio.style.padding="50px 60px"
@@ -60,4 +87,6 @@ try{
 	
   }
 
+
+  
    

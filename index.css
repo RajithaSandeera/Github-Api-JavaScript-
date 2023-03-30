@@ -4,9 +4,9 @@
     font-family:'poppins',sans-serif;
     margin:0;
     padding:0;
-      
+
 }
-container{
+/* container{
 
     width:100%;
     min-height: 100px;
@@ -16,14 +16,14 @@ container{
     padding:5%;
     background-position: center;
     text-align: center;
-   
-    
-}
-body{
+
+
+} */
+/* body{
 
     background-color: rgb(212, 219, 216);
-   
-}
+
+} */
 h3{
 
     text-align: center;
@@ -39,10 +39,14 @@ h3{
     padding: 10px;
     margin-top: 80px;
     /* justify-content: center; */
-    
+
+}
+
+.bg-mycolor{
+    background-color: rgb(183, 215, 204);
 }
 .search-bar input{
-    
+
     background: transparent;
     font-size: 17px;
     border-style: none;
@@ -52,76 +56,46 @@ h3{
     /* flex: 1; */
 
 }
-.search-bar button img{
-    
-    border:none;
-    background: transparent;
-    border-style: none;
-    outline: none;
-    border-radius:50%;
-    width:30px;
-    height:30px;
-    cursor: pointer;
-    background-color: rgb(212, 219, 216);
-    
-}
-
-.search-bar button {
-
-    border-style:none;
-    background-color:rgb(247, 245, 244);
-}
 
 
 
 
-.container details {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    background: none;
-    backdrop-filter: none;
-    box-shadow: none;
-  }
-  
- 
 
-#profile{
 
-    width:50%;
+
+
+
+/* #profile{
+
+    width:300px;
     height: 60vh;
     margin-top: 70px;
     display: flex;
     align-items: left;
     justify-content:center;
 
-}
-#profile2{
+} */
+/* #profile2{
 
 
-    width:50%;
-    height: 80vh;
+    width:700px;
+    height: 60vh;
     margin-top: 60px;
     display: flex;
     align-items: right;
     justify-content:center;
-  
 
-}
 
-.profile-box{
+} */
 
-    background-color: rgb(170, 193, 177);
+/* .profile-box{
+
+    background-color: rgb(184, 201, 190);
     text-align: center;
     position:relative;
     border-radius: 20px;
-     
-}
 
-.profile-pic{
-    /* padding: 6px; */
-    margin-top: 10px;
-}
+} */
+
+
 
